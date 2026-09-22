@@ -52,8 +52,8 @@ To prevent acoustic memorization and enforce invariance across specific frequenc
 
 A comparison of the evaluation metrics reveals a clear trade-off between local receptive fields and context aggregation:
 
-1. **Greedy Decoding Advantage:** Under standard greedy decoding, **QuartzNet_attn 5x5** (9.3M params) outperforms the deeper **QuartzNet 10x5** (12.8M params), reducing WER from **9.03%** to **8.90%**. This confirms that replacing the standard 1x1 Conv head with a Self-Attention mechanism allows the model to capture global acoustic context more effectively than merely stacking deeper 1D depthwise separable convolutions.
-2. **Language Model Rescoring Dynamics:** However, when integrating **KenLM**, **QuartzNet 10x5** achieves a lower WER (**6.07%** vs **6.33%**). While the Language Model resolves phrase-level semantic ambiguities, the deeper convolutional backbone of the 10x5 model provides richer, fine-grained temporal representations. The lighter 5x5 backbone, despite its self-attention head, hits a structural capacity limit in feature extraction that the LM cannot fully compensate for.
+1. **Greedy Decoding Advantage:** Under standard greedy decoding, **QuartzNet_attn 5x5** (9.3M params) outperforms the deeper **QuartzNet 10x5** (12.8M params), reducing CER from **9.03%** to **8.90%**. This confirms that replacing the standard 1x1 Conv head with a Self-Attention mechanism allows the model to capture global acoustic context more effectively than merely stacking deeper 1D depthwise separable convolutions.
+2. **Language Model Rescoring Dynamics:** However, when integrating **KenLM**, **QuartzNet 10x5** achieves a lower CER (**6.07%** vs **6.33%**). While the Language Model resolves phrase-level semantic ambiguities, the deeper convolutional backbone of the 10x5 model provides richer, fine-grained temporal representations. The lighter 5x5 backbone, despite its self-attention head, hits a structural capacity limit in feature extraction that the LM cannot fully compensate for.
 
 ---
 
