@@ -88,3 +88,11 @@ Audio signals are resampled and converted into Log-Mel Spectrograms during the p
 | **Audio Scaling** | `Decibel (dB)` | Converts Power Spectrogram to log-scale ($10 \cdot \log_{10}(S)$) to align with human auditory perception |
 | **Feature Normalization** | `InstanceNorm1d` | Applied at the input layer across mel-channels to stabilize channel-wise feature distribution per sequence |
 
+
+
+
+
+
+to use ASR/train.py download dataset directly from the huggingface reposity: https://huggingface.co/datasets/christian-tarantino/Common-Voice-Italian-v26
+to use ASR/inference.py download the .pth weights from the huggingface reposity: 
+
