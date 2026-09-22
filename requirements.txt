@@ -1,0 +1,14 @@
+torch
+torchaudio
+torchvision
+datasets
+pandas
+numpy
+matplotlib
+jiwer
+pyctcdecode
+soundfile
+tqdm
+torchinfo
+tensorboard
+https://github.com/kpu/kenlm/archive/master.zip
