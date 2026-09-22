@@ -18,7 +18,7 @@ Evaluated on the test set using **Greedy Decoding** and **KenLM** integration.
 
 ### Greedy Decoding
 
-| Method | Params | Test Loss | CER (%) | WER (%) |
+| Method | Params | Test Loss | WER (%) | CER (%) |
 | :--- | :---: | :---: | :---: | :---: |
 | QuartzNet 5x5 | 6.7M | 0.4284 | 38.03 | 10.15 |
 | QuartzNet_attn 5x5 | 9.3M | 0.4422 | 33.35 | 8.90 |
@@ -27,7 +27,7 @@ Evaluated on the test set using **Greedy Decoding** and **KenLM** integration.
 
 ### Language Model Decoding (KenLM)
 
-| Method | Params | Test Loss | CER (%) | WER (%) |
+| Method | Params | Test Loss | WER (%) | CER (%) |
 | :--- | :---: | :---: | :---: | :---: |
 | QuartzNet 5x5 | 6.7M | 0.4284 | 19.38 | 6.80 |
 | QuartzNet_attn 5x5 | 9.3M | 0.4422 | 19.16 | 6.33 |
