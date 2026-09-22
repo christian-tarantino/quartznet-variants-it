@@ -12,7 +12,7 @@ Y88b 888 Y88b 888 888  888 888     Y88b.   d88P    888  888 Y8b.     Y88b.
      888                                                                                                                                      
 
 ```
-## 📊 Main Results on Common Voice (Italian v26.0)
+## Main Results on Common Voice (Italian v26.0)
 
 Evaluated on the test set using **Greedy Decoding** and **KenLM** integration.
 
@@ -36,7 +36,7 @@ Evaluated on the test set using **Greedy Decoding** and **KenLM** integration.
 
 ---
 
-## 📝 Methodological & Architectural Notes
+## Methodological & Architectural Notes
 
 ### 1. Architectural Decisions & Rationale
 To improve context aggregation without significantly increasing parameter overhead, the standard 1x1 Conv classification head was replaced with a **Self-Attention head**. This modification consistently yielded superior performance, notably lowering the Word Error Rate (WER) by enabling the model to capture long-range acoustic dependencies before projection.
@@ -48,7 +48,7 @@ To prevent acoustic memorization and enforce invariance across specific frequenc
 
 ---
 
-### 🔍 Key Observations: Depth vs. Attention Mechanism
+### Key Observations: Depth vs. Attention Mechanism
 
 A comparison of the evaluation metrics reveals a clear trade-off between local receptive fields and context aggregation:
 
@@ -57,7 +57,7 @@ A comparison of the evaluation metrics reveals a clear trade-off between local r
 
 ---
 
-### ⚙️ Hyperparameter Configuration
+### Hyperparameter Configuration
 
 | Category | Hyperparameter | Value | Rationale / Note |
 | :--- | :--- | :---: | :--- |
@@ -74,7 +74,7 @@ A comparison of the evaluation metrics reveals a clear trade-off between local r
 
 ---
 
-## 🎙️ Acoustic Features & Audio Preprocessing
+## Acoustic Features & Audio Preprocessing
 
 Audio signals are resampled and converted into Log-Mel Spectrograms during the preprocessing pipeline prior to feature extraction.
 
@@ -93,6 +93,23 @@ Audio signals are resampled and converted into Log-Mel Spectrograms during the p
 
 
 
-to use ASR/train.py download dataset directly from the huggingface reposity: https://huggingface.co/datasets/christian-tarantino/Common-Voice-Italian-v26
-to use ASR/inference.py download the .pth weights from the huggingface reposity: 
+## Data & Model Checkpoints
+
+Before running the scripts, make sure to place the downloaded assets inside the `ASR/` directory.
+
+* **Dataset:** To train the models using `ASR/train.py`, download the processed dataset from Hugging Face:  
+   [Common-Voice-Italian-v26 Dataset](https://huggingface.co/datasets/christian-tarantino/Common-Voice-Italian-v26)
+* **Model Checkpoints:** To run `ASR/inference.py`, download the `.pth` weights from Hugging Face:  
+   [QuartzNet Variants Checkpoints](https://huggingface.co/christian-tarantino/quartznet-variants-it)
+
+### Expected Project Structure
+
+Place the downloaded dataset and weights directly inside the `ASR/` directory as follows:
+
+```text
+ASR/
+├── dataset/      # Downloaded dataset directory
+├── pth/          # Downloaded .pth model weights
+├── train.py
+└── inference.py
 
